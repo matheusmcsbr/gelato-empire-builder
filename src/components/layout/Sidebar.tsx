@@ -10,7 +10,8 @@ import {
   TrendingUp, 
   Store, 
   Calendar,
-  Settings
+  Settings,
+  IceCream
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -45,19 +46,29 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
         isOpen ? "translate-x-0 w-64" : "-translate-x-full w-64 md:translate-x-0 md:w-20"
       )}
     >
-      <div className="h-16 flex items-center justify-center px-4 bg-gradient-to-r from-gelato-strawberry/50 to-gelato-vanilla/50">
-        <span className={cn(
-          "text-lg font-bold text-gelato-chocolate transition-opacity duration-300",
-          !isOpen && "md:opacity-0"
-        )}>
-          Gelato Empire
-        </span>
+      <div className="h-20 flex items-center justify-center px-4 bg-gradient-to-r from-blue-500/50 to-teal-400/50">
+        <div className="flex items-center">
+          <div className="flex-shrink-0 mr-2">
+            <div className="bg-white p-2 rounded-full">
+              <IceCream size={isOpen ? 24 : 20} className="text-blue-600" />
+            </div>
+          </div>
+          <div className={cn(
+            "flex flex-col transition-opacity duration-300",
+            !isOpen && "md:opacity-0"
+          )}>
+            <span className="text-lg font-bold text-blue-800 italic font-serif">
+              Gelato di Mare
+            </span>
+            <span className="text-xs text-blue-700 italic">Authentic Italian Gelato</span>
+          </div>
+        </div>
         <div className={cn(
-          "w-10 h-10 rounded-full bg-gelato-vanilla flex items-center justify-center transition-opacity duration-300",
+          "w-10 h-10 rounded-full bg-white flex items-center justify-center transition-opacity duration-300",
           isOpen && "md:hidden",
           !isOpen && "md:opacity-100"
         )}>
-          <span className="text-gelato-chocolate font-bold">GE</span>
+          <span className="text-blue-700 font-bold">GdM</span>
         </div>
       </div>
 

@@ -26,7 +26,7 @@ export const Header: React.FC<HeaderProps> = ({ toggleSidebar, sidebarOpen }) =>
               {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
             </Button>
             <span className="text-xl font-semibold text-gelato-chocolate hidden md:block">
-              Gelato Empire Builder
+              Gelato di Mare
             </span>
           </div>
           
